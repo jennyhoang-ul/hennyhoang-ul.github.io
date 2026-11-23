@@ -2,8 +2,8 @@
 VOICE   an independent research publication: exact, confident, quiet where the text is long
 IDEA    the annotated statute book, set on a Swiss grid: § numbering, margin notes, evidence tags
 PICTURE the name set large in Vietnamese with its diacritics; real data drawn as type and bars
-COLOUR  cool paper, near-black ink, ultramarine for the CISG/data voice, highlighter for marked claims
-TYPE    Be Vietnam Pro (structure, display) · Newsreader (reading, statements) · JetBrains Mono (metadata)
+COLOUR  Direction B: cool off-white, graphite ink, cobalt for the CISG/data voice, highlighter for marked claims
+TYPE    Be Vietnam Pro (structure, display), Newsreader (reading, statements), JetBrains Mono (metadata)
 LAYOUT  12-column grid; asymmetric spans; full-bleed bands alternate light, blue and ink
 */
 @import url("fonts.css");
@@ -11,16 +11,17 @@ LAYOUT  12-column grid; asymmetric spans; full-bleed bands alternate light, blue
 /* ---------- tokens ---------- */
 :root{
   color-scheme:light dark;
-  --paper:light-dark(#f7f7f4,#0d0e14);
-  --paper-2:light-dark(#ececf0,#171925);
-  --ink:light-dark(#0d0e14,#ededf2);
-  --ink-2:light-dark(#4a4d5c,#a9acbd);
-  --hair:light-dark(#c9cbd3,#2c2f40);
-  --blue:#1e2bd4;            /* band + buttons; white text on it 9.4:1 */
-  --blue-text:light-dark(#1e2bd4,#8f98ff); /* links on page ground */
-  --mark:#ffd43b;            /* highlighter; always with dark ink on top */
-  --on-mark:#0d0e14;
-  --ink-band:#0d0e14; --ink-band-2:#1c1e2b; --on-ink:#ededf2; --on-ink-2:#a9acbd;
+  /* Direction B, Contemporary Cobalt (v2): cool off-white, graphite, cobalt. Contrast ratios in DESIGN.md. */
+  --paper:light-dark(#f5f6f8,#12141a);
+  --paper-2:light-dark(#e9ebf0,#1b1e27);
+  --ink:light-dark(#1a1c23,#eceef3);      /* graphite, 15.7:1 on paper */
+  --ink-2:light-dark(#4a4e5b,#a8adbc);    /* 7.7:1 light, 8.2:1 dark */
+  --hair:light-dark(#c8ccd5,#2e3240);
+  --blue:#1f45c8;            /* cobalt band + buttons; white text on it 7.6:1 */
+  --blue-text:light-dark(#1f45c8,#94a8ff); /* links: 7.1:1 light, 8.2:1 dark */
+  --mark:#ffd43b;            /* highlighter; always with graphite on top (11.9:1) */
+  --on-mark:#1a1c23;
+  --ink-band:#1a1c23; --ink-band-2:#262933; --on-ink:#eceef3; --on-ink-2:#a8adbc;
 
   --f-sans:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --f-serif:"Newsreader Variable","Newsreader",Georgia,"Times New Roman",serif;
@@ -115,7 +116,7 @@ main{counter-reset:sec}
 .sec-margin{grid-column:9/span 4}
 .sec.wide .sec-main{grid-column:1/-1}
 .sec.wide .sec-margin{grid-column:1/span 7}
-.sec-main>p,.sec-main>ul:not(.entries),.sec-main>ol:not(.steps){max-width:66ch}
+.sec-main>p,.sec-main>ul:not(.entries):not(.acts):not(.plain),.sec-main>ol:not(.steps):not(.phases):not(.archive):not(.tl){max-width:66ch}
 .sec-main .lead{margin-bottom:1em}
 @media(max-width:900px){.sec-main,.sec-margin,.sec.wide .sec-margin{grid-column:1/-1}}
 
@@ -141,7 +142,7 @@ sup.fn a{background:none;color:var(--blue-text)}
 .btn-1:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
 /* ---------- home hero ---------- */
-.hero{padding:var(--s4) 0 var(--s6)}
+.hero{padding:var(--s4) 0 var(--s5)}
 .hero .meta-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gut);padding-bottom:var(--s2);border-bottom:1px solid var(--ink)}
 .hero .name{grid-column:1/-1;font:700 var(--t-name)/1.02 var(--f-sans);letter-spacing:-.05em;margin:var(--s4) 0 var(--s5);padding-top:.08em}
 .hero .name span{display:block}
@@ -156,10 +157,10 @@ sup.fn a{background:none;color:var(--blue-text)}
 
 /* ---------- full-bleed bands ---------- */
 .band{padding:var(--s6) 0}
-.band-blue{background:var(--blue);color:#fff;--ink:#fff;--ink-2:#c9ceff;--blue-text:#fff;--hair:rgba(255,255,255,.35)}
-.band-ink{background:var(--ink-band);color:var(--on-ink);--ink:var(--on-ink);--ink-2:var(--on-ink-2);--blue-text:#8f98ff;--hair:#2c2f40;--paper:var(--ink-band)}
-.band-blue .tag-v,.band-ink .tag-v{background:#fff;color:#0d0e14}
-.band-blue .btn:hover,.band-ink .btn:hover{background:#fff;color:#0d0e14}
+.band-blue{background:var(--blue);color:#fff;--ink:#fff;--ink-2:#d5dcf8;--blue-text:#fff;--hair:rgba(255,255,255,.35)}
+.band-ink{background:var(--ink-band);color:var(--on-ink);--ink:var(--on-ink);--ink-2:var(--on-ink-2);--blue-text:#94a8ff;--hair:#353946;--paper:var(--ink-band)}
+.band-blue .tag-v,.band-ink .tag-v{background:#fff;color:#1a1c23}
+.band-blue .btn:hover,.band-ink .btn:hover{background:#fff;color:#1a1c23}
 .band-blue .btn-1{background:#fff;border-color:#fff;color:var(--blue)}
 .band-ink .btn-1{background:var(--mark);border-color:var(--mark);color:var(--on-mark)}
 
@@ -287,7 +288,7 @@ tbody tr:last-child td{border-bottom:1px solid var(--ink)}
 .contact-big{font:600 clamp(24px,3.4vw,48px)/1.1 var(--f-sans);letter-spacing:-.02em;word-break:break-word}
 
 /* ---------- footer ---------- */
-.foot{background:var(--ink-band);color:var(--on-ink);--ink:var(--on-ink);--ink-2:var(--on-ink-2);--blue-text:#c9ceff;--hair:#2c2f40;margin-top:var(--s6)}
+.foot{background:var(--ink-band);color:var(--on-ink);--ink:var(--on-ink);--ink-2:var(--on-ink-2);--blue-text:#c9d3f7;--hair:#353946;margin-top:var(--s6)}
 .foot .wm{color:var(--on-ink);font:700 clamp(44px,8.6vw,132px)/.95 var(--f-sans);letter-spacing:-.05em;padding:var(--s5) 0 var(--s4);border-bottom:1px solid var(--hair)}
 .foot .cols{padding:var(--s4) 0 var(--s5);row-gap:var(--s4)}
 .foot .col{grid-column:span 3}
@@ -308,7 +309,62 @@ tbody tr:last-child td{border-bottom:1px solid var(--ink)}
   @keyframes rise{from{opacity:0;transform:translateY(.12em)}to{opacity:1;transform:none}}
   @keyframes ink{to{background-size:100% 100%}}
 }
-@media print{.top,.foot,.btns,.ctoc{display:none}.band-blue,.band-ink{background:none;color:#000}}
+/* ---------- v2 components ---------- */
+.textlink{align-self:center;font:500 15px/1.3 var(--f-sans);margin-left:var(--s1)}
+.lede-h{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut);padding:var(--s5) 0 var(--s4);border-top:2px solid var(--ink);margin-top:0}
+.lede-h .kick{grid-column:1/span 3;margin:6px 0 0}
+.lede-t{grid-column:4/span 7;margin:0;font:400 var(--t-state)/1.26 var(--f-serif);letter-spacing:-.01em;text-wrap:pretty}
+@media(max-width:900px){.lede-h .kick,.lede-t{grid-column:1/-1}.lede-h{row-gap:var(--s2)}}
+.more{margin:var(--s4) 0 0;font:500 16px/1.4 var(--f-sans)}
+.more a::after{content:"";display:inline-block;width:.5em;height:.5em;margin-left:.45em;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:translateY(-.05em) rotate(45deg)}
+.fsmall{list-style:none;padding:0;margin:var(--s5) 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gut)}
+.fsmall li{border-top:2px solid var(--ink);padding-top:var(--s2);margin:0;display:flex;flex-direction:column}
+.fnum{margin:0 0 var(--s2);font:300 clamp(48px,5vw,72px)/.9 var(--f-serif);letter-spacing:-.03em;color:var(--blue-text)}
+.fsmall h3{margin:6px 0 10px;font-size:clamp(20px,1.7vw,24px);line-height:1.22}
+.fsmall h3 a{color:var(--ink)}
+.fsmall p{margin:0 0 10px}
+.fsmall .out{margin-top:auto;padding-top:10px;border-top:1px solid var(--hair);font:400 var(--t-small)/1.45 var(--f-sans);color:var(--ink-2)}
+@media(max-width:900px){.fsmall{grid-template-columns:1fr;gap:var(--s4)}}
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--gut)}
+.cols3 h3{margin:0 0 10px;font-size:var(--t-h3)}
+@media(max-width:800px){.cols3{grid-template-columns:1fr}}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{border-top:1px solid var(--hair);padding:8px 0;margin:0;font:400 16.5px/1.45 var(--f-sans)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 var(--s4)}
+.filters button{font:500 15px/1 var(--f-sans);color:var(--ink);background:none;border:1.5px solid var(--ink);min-height:44px;padding:0 16px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.filters button .c{font:500 12.5px/1 var(--f-mono);color:var(--ink-2)}
+.filters button:hover{background:var(--paper-2)}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.filters button[aria-pressed=true] .c{color:inherit;opacity:.75}
+.archive,.acts,.phases{list-style:none;padding:0;margin:0}
+.arc{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr) auto;gap:var(--s1) var(--gut);border-top:1px solid var(--ink);padding:var(--s3) 0;margin:0;scroll-margin-top:96px}
+.arc[hidden]{display:none}
+.arc-y{margin:0;font:500 15px/1.5 var(--f-mono);color:var(--blue-text)}
+.arc-b h3{margin:4px 0 8px;font-size:clamp(20px,1.7vw,24px);line-height:1.25}
+.arc-b>p{margin:0 0 var(--s2);max-width:66ch}
+.arc-d{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--gut);margin:0}
+.arc-d div{border-top:1px solid var(--hair);padding:8px 0}
+.arc-d dt{font:500 var(--t-meta)/1.4 var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);margin-bottom:3px}
+.arc-d dd{margin:0;font:400 var(--t-small)/1.45 var(--f-sans)}
+.arc-s{margin:0}
+@media(max-width:800px){.arc{grid-template-columns:1fr}.arc-d{grid-template-columns:1fr}}
+.acts li{display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr);gap:var(--s1) var(--gut);border-top:1px solid var(--ink);padding:var(--s2) 0 var(--s3);margin:0;scroll-margin-top:96px}
+.acts h3{margin:0 0 4px;font-size:clamp(19px,1.5vw,22px)}
+.acts .meta{margin:0 0 8px}
+.acts li p:last-child{margin-bottom:0}
+.acts div>p:not(.meta){max-width:66ch;margin:0}
+.acts-sm li{padding:14px 0}
+.acts-sm .meta{margin:0}
+.acts+.acts{margin-top:var(--s4)}
+@media(max-width:600px){.acts li{grid-template-columns:1fr;gap:2px}}
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gut);margin-top:var(--s2)}
+.phases li{border-top:2px solid var(--ink);padding-top:var(--s2);margin:0}
+.phases h3{margin:6px 0 8px;font-size:var(--t-h3)}
+.phases p:last-child{margin:0;font:400 var(--t-small)/1.5 var(--f-sans);color:var(--ink-2)}
+@media(max-width:900px){.phases{grid-template-columns:1fr 1fr;row-gap:var(--s4)}}
+@media(max-width:520px){.phases{grid-template-columns:1fr}}
+
+@media print{.filters,.top,.foot,.btns,.ctoc{display:none}.band-blue,.band-ink{background:none;color:#000}}
 
 /* dark ground: the highlighter becomes a thick underline so light text stays readable */
 @media (prefers-color-scheme:dark){
