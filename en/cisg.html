@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISG case study — Hoang Dao My Duyen</title>
+<meta name="description" content="How a team screened 197 Vietnamese judicial documents for CISG applicability and why the result showed a recognition gap rather than proof of homeward interpretation.">
+<link rel="alternate" hreflang="en" href="../en/cisg.html">
+<link rel="alternate" hreflang="vi" href="../vi/cisg.html">
+<link rel="alternate" hreflang="x-default" href="../en/cisg.html">
+
+<meta property="og:title" content="CISG case study — Hoang Dao My Duyen">
+<meta property="og:description" content="How a team screened 197 Vietnamese judicial documents for CISG applicability and why the result showed a recognition gap rather than proof of homeward interpretation.">
+<meta property="og:locale" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap&subset=vietnamese">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html">Hoang Dao My Duyen</a>
+<nav class="nav" aria-label="Main"><a href="about.html">About</a><a href="projects.html" aria-current="page">Projects</a><a href="approach.html">How I research</a><a href="notes.html">Research notes</a><a href="writing.html">Writing</a><a href="cv.html">CV</a><a href="contact.html">Contact</a></nav>
+<div class="lang" role="group" aria-label="Language">
+<span aria-current="true">EN</span><a href="../vi/cisg.html" hreflang="vi" lang="vi" data-lang="vi">VI</a>
+</div>
+</div></header>
+<main id="content"><div class="wrap page">
+<div class="row"><div class="main"><h1>When the law applies but the judgment does not mention it</h1>
+<p class="lead">A course project on how Vietnamese courts identify and apply the UN Convention on Contracts for the International Sale of Goods (CISG), and what our evidence could and could not say about "homeward" interpretation.</p>
+<dl class="glance"><dt>Setting</dt><dd>Group 3, course on Contracts for the International Sale of Goods (class CLCQTL47B), Ho Chi Minh City University of Law</dd><dt>Period</dt><dd>September – October 2026</dd><dt>My role</dt><dd>Project coordinator: research direction, screening framework, case analysis, presentation structure; specified and tested the research tool</dd><dt>Methods</dt><dd>Treaty applicability analysis, conflict-of-laws reasoning, coding of judicial documents, case analysis, conditional forecasting</dd><dt>Outputs</dt><dd>Group slide deck, analytical drafts (parts 3 and 4), Python/Streamlit screening tool</dd></dl>
+<nav class="toc" aria-label="On this page"><a href="#problem">Problem</a><a href="#role">My role</a><a href="#method">Method</a><a href="#evidence">Evidence</a><a href="#reasoning">Legal reasoning</a><a href="#turn">Turning point</a><a href="#tool">Research tool</a><a href="#outputs">Outputs</a><a href="#skills">Skills</a><a href="#limits">Limits</a></nav></div><aside class="margin" aria-label="Notes and evidence"><p class="note"><span class="tag tag-s">Self-reported</span> Coordinator is my description of my role. The formal group assignment, team size and grade are not yet confirmed.</p>
+ <p class="note"><span class="tag tag-v">Documented</span> Slide deck <i>G3_CLCQTL47B_CISG</i>, drafts P3 and P4, and source files of the tool.</p></aside></div>
+
+<section id="problem"><div class="row"><div class="main"><h2>The research problem</h2><p>A dispute with a foreign party does not automatically fall under the CISG. Article 1 turns on where the parties have their places of business, whether those states are Contracting States at the relevant time or conflict-of-laws rules lead to one, what is being sold and whether the parties excluded the Convention. And even when the CISG is a relevant source, a court may apply it, cite it, consider and reject it, or not mention it at all.</p>
+   <p>Our topic asked about "homeward trend": interpreting the Convention through domestic-law concepts instead of autonomously, as Article 7 requires. That question only makes sense once a court has recognised the CISG in the first place.</p>
+   <h3>Research questions</h3>
+   <ol><li>How should a Vietnamese "foreign-element" dispute be distinguished from an international sale under CISG Article 1?</li>
+   <li>How can each case be checked for CISG applicability with objective, repeatable steps?</li>
+   <li>Where the CISG was applicable, did the court apply it, cite it, reject it or ignore it?</li>
+   <li>Is the pattern evidence of homeward interpretation, or of something earlier: not recognising the Convention?</li></ol></div><aside class="margin" aria-label="Notes and evidence"></aside></div></section>
+
+<section id="role"><div class="row"><div class="main"><h2>My role</h2><p>I organised the project into four linked parts for a 30-minute presentation: theory and data; case analysis and the homeward test; mechanisms and a conditional forecast; and recommendations. I asked for a screening method grounded in each legal condition, set requirements for the team's statistics work (case versus document level, correct denominators, missing data, a codebook), and directed the revision of part 3 when the data did not support our original framing.</p>
+   <p>The dataset, slides and analysis are team outputs. I do not claim to have reviewed every document myself.</p></div><aside class="margin" aria-label="Notes and evidence"><p class="note"><span class="tag tag-v">Documented</span> A file of part 3 carries my name; that shows involvement, not that I wrote every sentence of it.</p></aside></div></section>
+
+<section id="method"><div class="row"><div class="main"><h2>Method: a screening sequence</h2><p>Rather than searching judgments for the word "CISG", we tested each document in order and recorded the reason at every step:</p>
+   <ol class="steps">
+    <li><div><h3>Foreign element</h3><p>Does Vietnamese law treat the dispute as having a foreign element? A first filter only.</p></div></li>
+    <li><div><h3>Places of business</h3><p>Are the relevant places of business in different states (Articles 1 and 10)?</p></div></li>
+    <li><div><h3>Route and time</h3><p>Direct application under Article 1(1)(a), or via conflict-of-laws rules under 1(1)(b); Contracting State status on the relevant date (Article 100).</p></div></li>
+    <li><div><h3>Scope</h3><p>Excluded goods (Article 2) and mixed or manufacturing contracts (Article 3).</p></div></li>
+    <li><div><h3>Exclusion</h3><p>Did the parties opt out (Article 6)? Choosing Vietnamese law is not automatically an opt-out.</p></div></li>
+    <li><div><h3>Issue and court treatment</h3><p>Is the disputed issue governed by the Convention? Only then: how did the court actually treat it?</p></div></li>
+   </ol>
+   <p>The key design choice was to keep <em>our</em> conclusion about applicability separate from <em>what the court wrote</em>.</p></div><aside class="margin" aria-label="Notes and evidence"></aside></div></section>
+
+<section id="evidence"><div class="row"><div class="main"><h2>Working with the evidence</h2><div class="funnel" role="img" aria-label="197 documents collected, 58 with a foreign element, 27 with a basis to consider the CISG, 2 with substantive application">
+    <div class="f-row"><div class="f-l">Judicial documents collected by the team</div><div class="f-track"><div class="f-bar" style="width:100%"></div></div><div class="f-n">197</div></div>
+    <div class="f-row"><div class="f-l">Foreign element recorded</div><div class="f-track"><div class="f-bar" style="width:29.4%"></div></div><div class="f-n">58</div></div>
+    <div class="f-row"><div class="f-l">Basis to consider the CISG</div><div class="f-track"><div class="f-bar" style="width:13.7%"></div></div><div class="f-n">27</div></div>
+    <div class="f-row"><div class="f-l">Applied it</div><div class="f-track"><div class="f-bar" style="width:1.0%"></div></div><div class="f-n">2</div></div>
+   </div>
+   <p class="small">Bars are drawn to scale against the 197 documents collected.</p>
+   <p>Of the 27 relevant documents, 25 did not mention the Convention. 18 fell under the direct route of Article 1(1)(a), and 24 were pure sales contracts. In the 16 documents that were both, 14 still did not mention the CISG, so the gap cannot be explained only by difficult conflict-of-laws questions or hard-to-classify contracts.</p></div><aside class="margin" aria-label="Notes and evidence"><p class="note"><span class="tag tag-v">Documented</span> Figures from the team's analysis draft (P4), early October 2026.</p>
+   <p class="note"><b>Read with care.</b> This is the team's coded sample, not all Vietnamese courts. 91 documents were excluded earlier and never assessed for a foreign element.</p></aside></div></section>
+
+<section id="reasoning"><div class="row"><div class="main"><h2>Legal reasoning in practice</h2><h3>Domestic law in the reasoning is not automatically wrong</h3>
+   <p>In a Binh Duong judgment the court applied the CISG to payment and interest but used Vietnamese law to set the interest rate. Article 78 gives a right to interest without fixing a rate, so turning to another source is not itself an error. The real question is whether the court followed Article 7(2): general principles of the Convention first, then the applicable national law. We treated this as an open question, not as proof of a homeward trend.</p>
+   <h3>Procedural context changes what a citation proves</h3>
+   <p>A Hai Phong decision cited the CISG while deciding whether to recognise a foreign arbitral award. A court reviewing an award is not deciding the contract on the merits, so that citation shows awareness of the Convention but says little about how merits courts interpret it.</p></div><aside class="margin" aria-label="Notes and evidence"></aside></div></section>
+
+<section id="turn"><div class="row"><div class="main"><h2>The turning point</h2><p>It would have been easy to divide 25 by 27 and call it a measure of homeward interpretation. But "the court did not mention the CISG" and "the court interpreted the CISG through domestic concepts" are different events. Two cases of actual application cannot show a stable interpretive trend.</p>
+   <p>So we changed the claim. The finding became a <strong>gap between applicability and recognition</strong>. Part 3 turned into a conditional forecast along two variables: how often courts recognise the CISG, and how well they interpret it autonomously. The highest-risk scenario is not courts ignoring the Convention, but recognition rising faster than the ability to interpret it correctly.</p></div><aside class="margin" aria-label="Notes and evidence"><p class="note"><span class="tag tag-v">Documented</span> Recorded in project conversations of early October 2026 and in the revised part 3 outline.</p></aside></div></section>
+
+<section id="tool"><div class="row"><div class="main"><h2>From research to a research tool</h2><p>To keep seven people screening the same way, I specified a small web application and built it iteratively with AI coding assistance, in Python and Streamlit, through GitHub. The version I inspected has four tabs:</p>
+   <ul><li><strong>Screening:</strong> upload PDFs (exact duplicates are caught by file hash), walk through the legal steps, and save each answer with its reasoning.</li>
+   <li><strong>Records:</strong> review, edit and manage the shared case records.</li>
+   <li><strong>Statistics:</strong> aggregate the coded records.</li>
+   <li><strong>Practice:</strong> re-screen a finished case and be stopped at the first step that differs from the team's answer; practice answers never touch the research data.</li></ul>
+   <p>One rule mattered most to me: the conflict-of-laws helper suggests an applicable law only when the facts it needs are recorded. If they are missing, it stops and asks for human review, because a missing fact must not silently become a "no".</p>
+   <p>My part was the legal logic, the requirements, integrating and editing code, and testing and reporting real errors (syntax, indentation and type errors) until they were fixed. Much of the code itself was written with AI assistance.</p></div><aside class="margin" aria-label="Notes and evidence"><p class="note"><span class="tag tag-v">Documented</span> Source files: app_cisg.py (October 2026 version), cisg_conflicts.py, cisg_game.py.</p>
+   <p class="note"><span class="tag tag-c">Not yet confirmed</span> Whether the public Streamlit link still works, and the full Git history.</p></aside></div></section>
+
+<section id="outputs"><div class="row"><div class="main"><h2>Outputs and evidence</h2><div class="scroll"><table class="stack"><thead><tr><th scope="col">Output</th><th scope="col">What it shows</th><th scope="col">Status</th></tr></thead><tbody><tr><td data-l="Output">Group 3 slide deck</td><td data-l="What it shows">Research flow, 197 → 58 → 27 → 2, homeward analysis</td><td data-l="Status"><span class="tag tag-v">Documented</span></td></tr><tr><td data-l="Output">Analytical drafts, parts 3 and 4</td><td data-l="What it shows">Case analysis, data tables, conditional scenarios</td><td data-l="Status"><span class="tag tag-v">Documented</span></td></tr><tr><td data-l="Output">Screening tool source code</td><td data-l="What it shows">Four tabs, guarded conflict-of-laws helper, practice mode</td><td data-l="Status"><span class="tag tag-v">Documented</span></td></tr><tr><td data-l="Output">Statistics brief for the team</td><td data-l="What it shows">Codebook, denominators, missing-data rules</td><td data-l="Status"><span class="tag tag-v">Documented</span> planned workbook not confirmed</td></tr><tr><td data-l="Output">Live web app</td><td data-l="What it shows">Public deployment</td><td data-l="Status"><span class="tag tag-c">Not yet confirmed</span></td></tr><tr><td data-l="Output">Journal article outline (courts vs VIAC)</td><td data-l="What it shows">A separate follow-up study</td><td data-l="Status"><span class="tag tag-d">In development</span></td></tr></tbody></table></div></div><aside class="margin" aria-label="Notes and evidence"></aside></div></section>
+
+<section id="skills"><div class="row"><div class="main"><h2>What it demonstrates, and what I developed</h2><p><strong>Demonstrated:</strong> applicability analysis of a treaty, case analysis that looks at reasoning rather than outcomes, disciplined use of data, and coordinating a team's research.</p>
+   <p><strong>Developed during the project:</strong> turning legal rules into a decision sequence someone else can follow, reading error messages and fixing code with AI help, and presenting a narrow finding clearly.</p>
+   <p><strong>Not shown by this project:</strong> expertise in privacy law, product compliance or software engineering.</p></div><aside class="margin" aria-label="Notes and evidence"></aside></div></section>
+
+<section id="limits"><div class="row"><div class="main"><h2>Limitations and further questions</h2><ul><li>The sample is the team's collection, not a representative national dataset.</li><li>Our legal coding has not been audited by anyone outside the team.</li><li>How individual work was divided, and the live state of the tool, still need confirming.</li></ul>
+   <p>The question I would pursue next is whether arbitral tribunals in Vietnam handle the CISG differently from courts; I am drafting an outline for that in my <a href="notes.html">research notes</a>.</p></div><aside class="margin" aria-label="Notes and evidence"></aside></div></section>
+</div></main>
+<footer class="foot"><div class="wrap"><span>Hoang Dao My Duyen · Ho Chi Minh City University of Law</span><span>Last updated November 2026</span></div></footer>
+<script>{try{localStorage.setItem("lang","en")}catch(e){}document.querySelectorAll("[data-lang]").forEach(a=>a.addEventListener("click",()=>{try{localStorage.setItem("lang",a.dataset.lang)}catch(e){}}))}</script>
+</body>
+</html>
