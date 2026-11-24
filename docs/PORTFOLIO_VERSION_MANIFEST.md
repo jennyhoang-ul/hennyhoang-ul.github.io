@@ -1,6 +1,6 @@
 # Portfolio version manifest
 
-Last updated: 24 November 2026. This file is kept identical on `main` and `pflo2`.
+Last updated: 24 November 2026. This file is kept identical on `pflo1-source` and `pflo2`.
 
 ## How to read version names
 
@@ -17,7 +17,7 @@ Last updated: 24 November 2026. This file is kept identical on `main` and `pflo2
 | Status | Frozen baseline (immutable) | Experimental, in review. **Not deployed.** |
 | Tag | `pflo1` (annotated) | `pflo2-alpha` (annotated) |
 | Commit | `7f92f5023b5794cec40e8555990b56deaddfe293` | `b328e93868b7969ab3d534224ea4345c648036f0` |
-| Branch | `main` (tag sits on the first commit) | `pflo2` |
+| Branch | `pflo1-source` (source code; the tag sits on its first commit) | `pflo2` |
 | Base | (root) | `7f92f50` (the `pflo1` commit, exactly) |
 | Concept | Luminous dawn palette, glass cards, aurora ground, dawn-sky hero | One issue of a research publication: cover, contents, ten chapters, six features, index with four views |
 | Preview (private until shared) | https://claude.ai/artifact/RgXbipbaa3BHdiEBmLrtJH (slug `c7e03123-b0c6-422b-9cfc-d30651b77b6e`, version `1795500812-bd1b`) | https://claude.ai/artifact/4LD5NqWAjAHsc7KAQ1C61W (slug `1af9fd47-a68d-42f4-9d94-fb1605fdb429`, version `1795522627-8380`) |
@@ -45,7 +45,7 @@ From the bundle (no GitHub needed):
 ```
 git clone portfolio.bundle site && cd site
 git checkout pflo1          # PFLO1 exactly (detached)
-git checkout pflo2          # PFLO2 branch
+git checkout pflo2          # PFLO2 branch (from a fresh bundle clone: git checkout -B pflo2 origin/pflo2)
 node build.mjs && node scripts/check.mjs dist
 ```
 
@@ -53,12 +53,31 @@ To deploy PFLO1 to GitHub Pages (only with the owner's approval): build from `pf
 
 To deploy PFLO2 (only after the owner approves the new direction): build from `pflo2` and publish `dist/`. Keep the `pflo1` tag so PFLO1 can be restored by rebuilding it.
 
-To push the history to GitHub once the repository is connected:
+## GitHub layout
+
+On GitHub (`jennyhoang-ul/hennyhoang-ul.github.io`) the branches have different jobs:
+
+| Branch | Holds | Served by Pages |
+| --- | --- | --- |
+| `main` | the built site files only (`index.html`, `assets/`, `en/`, `vi/`, `cv/`) | yes, this is production |
+| `pflo1-source` | PFLO1 source code and docs; tag `pflo1` | no |
+| `pflo2` | PFLO2 source code and docs; tag `pflo2-alpha` | no |
+
+Never push a source branch onto `main` and never force-push `main`: Pages would then serve the source code instead of the site.
+
+First upload (from a clone of `portfolio.bundle`):
 
 ```
+git clone portfolio.bundle jenny-portfolio-source
+cd jenny-portfolio-source
+git remote rename origin bundle
 git remote add origin https://github.com/jennyhoang-ul/hennyhoang-ul.github.io.git
-git push origin main pflo2 --follow-tags
+git branch pflo1-source bundle/pflo1-source
+git checkout -B pflo2 bundle/pflo2
+git push origin pflo1-source pflo2
 git push origin pflo1 pflo2-alpha
 ```
+
+Switching production between versions: replace the contents of `main` with the contents of `PFLO2_site.zip` (to go to PFLO2, only after approval) or `PFLO1_site.zip` (to go back).
 
 From the zips without git: unzip `PFLO1_site.zip` or `PFLO2_site.zip` and open `index.html`, or unzip the matching `_source.zip` and run `node build.mjs`.
