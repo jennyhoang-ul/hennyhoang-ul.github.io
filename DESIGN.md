@@ -1,5 +1,7 @@
 # Design system, Jenny Hoang research portfolio
 
+> **PFLO2 "Issue 01" (this branch).** An editorial redesign: the portfolio is set as one issue of a research publication, with a cover, contents, ten numbered chapters, six features and an index at the back. The full concept, the three concepts considered, the evaluation, the editorial blueprint and the design system are in `docs/PFLO2_DESIGN_BRIEF.md`. Kept from PFLO1: Anton, Spectral and Be Vietnam Pro; the bright hues (now used flat, as paper tints, not as glows); the J mark; the brand rules below. Changed: paper ground #FBFAF7 instead of the aurora; no glass or rounded cards; rules, folios, plates with captions, credits strips, halftone and duotone images; one loud moment per page (the cover masthead, then the chapter number). The v4 and v3 notes below describe PFLO1.
+
 > **v4 "Dawn" (current).** The v3 notes below still describe layout, type and brand rules. What changed in v4: a multi-hue palette (lilac #C7B5FF, peach #FFC7A6, sky #A9D3FF, mint #A6E8CF, butter #FFE39E, rose #FFB8CF, used only for surfaces, glows and artwork), indigo ink #1E1B3A (15.7:1 on paper), cobalt #3446D4 (6.7:1) and violet #5B3FD9 (6.3:1) for links and accents, a fixed aurora background, glass surfaces (white 62%, blur, white hairline), rounded corners (18 to 30px), a dawn-sky hero with ambient motion, gradient text for the second wordmark line and numbers, and new luminous artwork. Each project has a hue (see HUE in build.mjs). Ambient motion and scroll reveals are disabled under prefers-reduced-motion.
 
 ## v3 notes

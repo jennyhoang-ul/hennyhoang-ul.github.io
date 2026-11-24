@@ -4,11 +4,12 @@
 //   type    research | coursework | technology | ongoing   (drives the filter)
 //   page    slug of a detail page, if the project has one (content in en.mjs / vi.mjs)
 //   link    where the card points when there is no detail page ("" = no link)
+//   theme   evidence | trade | rights | tools  (PFLO2 index views and theme map)
 //   art     artwork file in assets/art/ (original graphics made for this site, see assets/art/README.md)
 // Writing rule: no en dash or em dash. Use "to", a comma or a colon.
 export default [
   {
-    id: "cisg", no: 7, period: "2026", sort: 2026.9, type: "coursework", home: true, page: "cisg",
+    id: "cisg", no: 7, theme: "trade", period: "2026", sort: 2026.9, type: "coursework", home: true, page: "cisg",
     title: { en: "CISG in Vietnamese courts", vi: "CISG tại Tòa án Việt Nam" },
     kind: { en: "Course project", vi: "Dự án học phần" },
     role: { en: "Project coordinator", vi: "Điều phối dự án" },
@@ -21,7 +22,7 @@ export default [
     alt: { en: "Four bars shrinking from 197 to 2, the team's screening funnel", vi: "Bốn thanh ngắn dần từ 197 xuống 2, phễu sàng lọc của nhóm" },
   },
   {
-    id: "jcj", no: 9, period: "2026", sort: 2026.8, type: "coursework", home: true, page: "jcj",
+    id: "jcj", no: 9, theme: "rights", period: "2026", sort: 2026.8, type: "coursework", home: true, page: "jcj",
     title: { en: "Juvenile prisoners' family contact", vi: "Quyền liên hệ gia đình của phạm nhân chưa thành niên" },
     kind: { en: "Course project", vi: "Dự án học phần" },
     role: { en: "Project coordinator; introduction and legal framework", vi: "Điều phối dự án; phần mở đầu và khung pháp lý" },
@@ -34,7 +35,7 @@ export default [
     alt: { en: "Hollow columns reaching a ceiling line above an empty dashed floor", vi: "Các cột rỗng chạm vạch trần, phía dưới là vạch sàn để trống" },
   },
   {
-    id: "hs61", no: 6, period: "2025 to 2026", sort: 2026.5, type: "research", home: true, page: "hs61",
+    id: "hs61", no: 6, theme: "evidence", period: "2025 to 2026", sort: 2026.5, type: "research", home: true, page: "hs61",
     title: { en: "Personal data in the collection of electronic evidence", vi: "Dữ liệu cá nhân trong thu thập chứng cứ điện tử" },
     kind: { en: "Student research", vi: "Nghiên cứu khoa học sinh viên" },
     role: { en: "Team member", vi: "Thành viên" },
@@ -50,7 +51,7 @@ export default [
     alt: { en: "A grid of data points, part of it covered by a solid block", vi: "Một lưới điểm dữ liệu, một phần bị che bởi khối màu" },
   },
   {
-    id: "ds92", no: 5, period: "2024 to 2025", sort: 2025.5, type: "research", home: true, page: "ds92",
+    id: "ds92", no: 5, theme: "evidence", period: "2024 to 2025", sort: 2025.5, type: "research", home: true, page: "ds92",
     title: { en: "Collecting electronic data messages", vi: "Thu thập thông điệp dữ liệu điện tử" },
     kind: { en: "Student research", vi: "Nghiên cứu khoa học sinh viên" },
     role: { en: "Principal investigator", vi: "Chủ nhiệm đề tài" },
@@ -63,7 +64,7 @@ export default [
     alt: { en: "Message shapes travelling along lines into one container", vi: "Các hình thông điệp đi theo đường thẳng vào một khối chứa" },
   },
   {
-    id: "drivers", no: 4, period: "2024", sort: 2024.6, type: "research", home: true, page: "drivers",
+    id: "drivers", no: 4, theme: "rights", period: "2024", sort: 2024.6, type: "research", home: true, page: "drivers",
     title: { en: "Ride-hailing drivers and their contracts", vi: "Tài xế công nghệ và hợp đồng gọi xe" },
     kind: { en: "Student research, published paper", vi: "Nghiên cứu khoa học sinh viên, bài đã công bố" },
     role: { en: "Team member, co-author", vi: "Thành viên, đồng tác giả" },
@@ -79,7 +80,7 @@ export default [
     alt: { en: "A winding route with stops, crossed by two parallel lines", vi: "Một tuyến đường uốn lượn có các điểm dừng, cắt qua hai đường song song" },
   },
   {
-    id: "admin", no: 3, period: "2023 to 2024", sort: 2024.4, type: "research", home: true, page: "admin",
+    id: "admin", no: 3, theme: "rights", period: "2023 to 2024", sort: 2024.4, type: "research", home: true, page: "admin",
     title: { en: "Proof in administrative cases", vi: "Chứng minh trong vụ án hành chính" },
     kind: { en: "Student research", vi: "Nghiên cứu khoa học sinh viên" },
     role: { en: "Principal investigator", vi: "Chủ nhiệm đề tài" },
@@ -92,7 +93,7 @@ export default [
     alt: { en: "A tilted balance beam with blocks on each side", vi: "Một cán cân nghiêng với các khối ở hai bên" },
   },
   {
-    id: "tool", no: 8, period: "2026", sort: 2026.7, type: "technology", link: "cisg.html#tool",
+    id: "tool", no: 8, theme: "tools", period: "2026", sort: 2026.7, type: "technology", link: "cisg.html#tool",
     title: { en: "CISG case-screening tool", vi: "Công cụ sàng lọc hồ sơ CISG" },
     kind: { en: "Research tool", vi: "Công cụ nghiên cứu" },
     role: { en: "Specified, tested and debugged, with AI writing much of the code", vi: "Đặc tả, kiểm thử và sửa lỗi; phần lớn mã do AI hỗ trợ viết" },
@@ -105,7 +106,7 @@ export default [
     alt: { en: "A window with tabs and a flow of steps that branches to a review box", vi: "Một cửa sổ có các thẻ và chuỗi bước rẽ nhánh sang ô xem xét" },
   },
   {
-    id: "viac", no: 10, period: "2026", sort: 2026.95, type: "ongoing", link: "notes.html#viac",
+    id: "viac", no: 10, theme: "trade", period: "2026", sort: 2026.95, type: "ongoing", link: "notes.html#viac",
     title: { en: "CISG in courts and in arbitration", vi: "CISG tại Tòa án và tại trọng tài" },
     kind: { en: "Article outline, in progress", vi: "Đề cương bài viết, đang làm" },
     role: { en: "Author", vi: "Tác giả" },
@@ -118,7 +119,7 @@ export default [
     alt: { en: "Two overlapping circles", vi: "Hai hình tròn giao nhau" },
   },
   {
-    id: "childdata", no: 11, period: "2026", sort: 2026.96, type: "ongoing", link: "notes.html#children-data",
+    id: "childdata", no: 11, theme: "evidence", period: "2026", sort: 2026.96, type: "ongoing", link: "notes.html#children-data",
     title: { en: "Children's data in three legal systems", vi: "Dữ liệu trẻ em trong ba hệ thống pháp luật" },
     kind: { en: "Research notes, in progress", vi: "Ghi chú nghiên cứu, đang làm" },
     role: { en: "Author", vi: "Tác giả" },
@@ -131,7 +132,7 @@ export default [
     alt: { en: "Three overlapping circles around a small dot", vi: "Ba hình tròn giao nhau quanh một chấm nhỏ" },
   },
   {
-    id: "courses", no: 2, period: "2022 to now", sort: 2023.0, type: "coursework", link: "",
+    id: "courses", no: 2, theme: "tools", period: "2022 to now", sort: 2023.0, type: "coursework", link: "",
     title: { en: "Team projects across law and business courses", vi: "Dự án nhóm trong các học phần Luật và Quản trị kinh doanh" },
     kind: { en: "Coursework", vi: "Học phần" },
     role: { en: "Team leader", vi: "Trưởng nhóm" },
@@ -144,7 +145,7 @@ export default [
     alt: { en: "A ring of small circles linked to one centre", vi: "Một vòng các chấm tròn nối về một tâm" },
   },
   {
-    id: "shift", no: 1, period: "2020 to 2022", sort: 2021.0, type: "technology", link: "activities.html#shift",
+    id: "shift", no: 1, theme: "tools", period: "2020 to 2022", sort: 2021.0, type: "technology", link: "activities.html#shift",
     title: { en: "The Shift", vi: "The Shift" },
     kind: { en: "Student initiative, website", vi: "Dự án học sinh, website" },
     role: { en: "Founder", vi: "Người sáng lập" },

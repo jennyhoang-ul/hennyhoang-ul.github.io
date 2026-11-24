@@ -1,5 +1,20 @@
 # Changelog
 
+## PFLO2 "Issue 01" (experimental), 24 November 2026, branch `pflo2`
+
+Built from the exact PFLO1 commit (tag `pflo1`). Not deployed; production still serves PFLO1 or older.
+
+- The site is now one issue of a research publication: cover, contents, and ten numbered chapters (opening note, features, the index, field notes, chronology, method, notebook, writing, CV, colophon and contact).
+- Cover: JENNY HOANG masthead, tagline, a cobalt disc and halftone, cover lines for the six features, and a link into the contents.
+- New opening note written only from facts already on the site.
+- Six features (CISG, JCJ, HS61, DS92, ride-hailing drivers, administrative proof) share one feature template: opener with number, standfirst, plate with caption, credits strip, in-page contents, drop cap, and previous/next feature.
+- The index (chapter 03) shows all eleven projects by year, by theme, by kind, or on a theme map. Each project now has a `theme`.
+- Chronology groups the timeline into four dated periods; field notes alternate in two columns.
+- Masthead shows the current chapter; a contents panel (dialog) is available on every page; every page ends with a folio and previous/next chapter links; features show a reading progress bar.
+- Colophon added to the contact chapter (typefaces, images, design, build).
+- Glass, glows and the aurora background removed; flat paper with rules and tints instead.
+- New data file `content/issue.mjs`. The `index` entries in `content/en.mjs` and `content/vi.mjs` are no longer used.
+
 ## v4 "Dawn", 24 November 2026
 
 - Visual direction moved from flat cobalt and apricot to a luminous dawn palette: lilac, peach, sky, mint, butter and rose surfaces on a soft aurora ground, with indigo ink (#1E1B3A), cobalt #3446D4 and violet #5B3FD9 for text-level colour. All text pairs still pass WCAG AA.

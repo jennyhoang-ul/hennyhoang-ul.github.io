@@ -6,6 +6,8 @@ A bilingual (English / Tiếng Việt) research portfolio. Plain HTML and CSS ge
 - The site root (`/index.html`) sends visitors to the language they used last, or to their browser language, or to English.
 - The EN/VI switch on every page opens the same page in the other language.
 
+> **Versions.** This branch (`pflo2`) holds **PFLO2 "Issue 01"**, an experimental editorial design. The frozen baseline **PFLO1** (v4 "Dawn") is the tag `pflo1` on `main`. See `docs/PORTFOLIO_VERSION_MANIFEST.md` for hashes and restore commands, and `docs/PFLO2_DESIGN_BRIEF.md` for the concept, blueprint and design system.
+
 ## Requirements
 
 Node.js 18 or newer. Nothing to install.
@@ -24,7 +26,8 @@ Node.js 18 or newer. Nothing to install.
 ```
 build.mjs              page layout, navigation, language switch, helpers
 site.config.mjs        siteUrl (set to the GitHub Pages address)
-content/projects.mjs   every project, both languages (archive + home "Selected work")
+content/issue.mjs      PFLO2 editorial layer: issue name, chapter titles, opening note, index views, colophon (EN + VI)
+content/projects.mjs   every project, both languages, with a `theme` for the index and the theme map
 content/activities.mjs every organisation, job and activity, both languages
 content/en.mjs         English page text, one entry per page
 content/vi.mjs         Vietnamese page text, same structure and section ids
@@ -39,6 +42,15 @@ scripts/art.mjs        regenerates the project artwork
 scripts/build-resume.cjs builds the Word resumes
 CHANGELOG.md           what changed in each version
 ```
+
+## How PFLO2 is organised
+
+The site reads as one issue of a publication. The cover page (`index.html`) holds the cover, the contents, chapter 01 (opening note) and chapter 02 (features). Every other page is a chapter with a numbered opener: 03 The index (`projects`), 04 Field notes (`activities`), 05 Chronology (`about`), 06 Method (`approach`), 07 Notebook (`notes`), 08 Writing, 09 CV, 10 Colophon and contact. Chapter order lives in `CHAPTERS` in `build.mjs`; chapter titles and one-line descriptions live in `content/issue.mjs` under `chap`.
+
+- The cover is built by `issuePage()` in `build.mjs` from `content/issue.mjs` and `content/projects.mjs`. The `index` entries in `content/en.mjs` and `content/vi.mjs` are no longer used.
+- **Features** are the projects that have a `page`. They are listed in the order of `sort` (newest first) and get a feature opener (plate, caption, credits strip) and a previous/next pager.
+- **The index** shows every project four ways: by year, by theme, by kind, and as a theme map. Themes are set per project (`theme`: `evidence`, `trade`, `rights` or `tools`) and named in `content/issue.mjs` under `themes`.
+- To add a chapter: add its key to `CHAPTERS`, a page entry in both language files, a `chap` entry in both halves of `content/issue.mjs`, and a hue in `CH_HUE`.
 
 ## Editing content
 
@@ -64,15 +76,15 @@ Helpers available inside a body:
 
 1. Add an entry to `content/projects.mjs` (copy an existing one) and fill `en` and `vi`, including `alt` text for its picture.
    - `no`: the next catalogue number. `type`: `research`, `coursework`, `technology` or `ongoing`.
-   - `home: true` to show it in the home gallery. All cards are the same size.
+   - `theme`: `evidence`, `trade`, `rights` or `tools` (used by the index and the theme map). `home` is not used in PFLO2.
    - `page`: a detail-page slug, or `link` to point somewhere else.
 2. Give it a hue in `HUE` (build.mjs) and add its artwork: write a scene in `scripts/art.mjs` (add its sky to `SKY`) and run `node scripts/art.mjs`, or put your own image at `assets/art/<id>.svg` (or change the card to a .jpg) and record it in `assets/art/README.md`.
-3. If it has a detail page, add a `<slug>` entry to both language files using `h.caseHero` and `h.caseBody` (copy `hs61`). `build.mjs` picks up the page from `projects.mjs`.
+3. If it has a detail page, add a `<slug>` entry to both language files using `h.caseHero` and `h.caseBody` (copy `hs61`). `build.mjs` picks up the page from `projects.mjs` and adds it to the features, the contents and the cover lines.
 4. `node build.mjs && node scripts/check.mjs dist`.
 
 ## Adding an activity
 
-Add an entry to `content/activities.mjs` with `group`: `work`, `lead`, `debate`, `school` or `recognition`, and both languages. It appears on the Activities page in date order. To show it on the home page, add its `id` to the `h.actPreview([...])` list in both `index` bodies.
+Add an entry to `content/activities.mjs` with `group`: `work`, `lead`, `debate`, `school` or `recognition`, and both languages. It appears in chapter 04 (Field notes) in date order.
 
 ## Updating the resumes
 
