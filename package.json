@@ -1,0 +1,14 @@
+{
+  "name": "duyen-research-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Bilingual EN/VI research portfolio of Hoang Dao My Duyen",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:preview": "node build.mjs --artifact",
+    "check": "node scripts/check.mjs dist",
+    "serve": "npx serve dist"
+  },
+  "engines": { "node": ">=18" }
+}

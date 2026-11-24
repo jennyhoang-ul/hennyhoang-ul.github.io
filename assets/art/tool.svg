@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B9C3FF"/><stop offset="1" stop-color="#F1F3FF"/></linearGradient>
+<filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="46"/></filter>
+<filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#1E1B3A" flood-opacity=".16"/></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .05 0"/></filter>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity=".55"/></linearGradient>
+<linearGradient id="hueA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9D3FF"/><stop offset="1" stop-color="#C7B5FF"/></linearGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#F28A5B" stop-opacity=".85"/><stop offset="1" stop-color="#F28A5B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="800" height="600" fill="url(#sky)"/>
+<circle cx="150" cy="140" r="170" fill="#A9D3FF" opacity=".75" filter="url(#blur)"/>
+<circle cx="650" cy="470" r="200" fill="#C7B5FF" opacity=".8" filter="url(#blur)"/>
+<circle cx="560" cy="110" r="120" fill="#fff" opacity=".7" filter="url(#blur)"/>
+
+<rect x="110" y="100" width="580" height="400" rx="28" fill="url(#glass)" filter="url(#shadow)"/>
+  <rect x="110" y="100" width="580" height="400" rx="28" fill="none" stroke="#fff" stroke-width="3"/><rect x="140" y="125" width="104" height="34" rx="17" fill="#3B4FE0" opacity="1"/><rect x="260" y="125" width="104" height="34" rx="17" fill="#fff" opacity="0.8"/><rect x="380" y="125" width="104" height="34" rx="17" fill="#fff" opacity="0.8"/><rect x="500" y="125" width="104" height="34" rx="17" fill="#fff" opacity="0.8"/><line x1="190" y1="300" x2="290" y2="300" stroke="#1E1B3A" stroke-width="4" opacity=".6"/><line x1="290" y1="300" x2="390" y2="300" stroke="#1E1B3A" stroke-width="4" opacity=".6"/><circle cx="190" cy="300" r="26" fill="#3B4FE0" filter="url(#shadow)"/><path d="M181 300 l7 8 l12 -15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="290" cy="300" r="26" fill="#3B4FE0" filter="url(#shadow)"/><path d="M281 300 l7 8 l12 -15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="390" cy="300" r="26" fill="#3B4FE0" filter="url(#shadow)"/><path d="M381 300 l7 8 l12 -15" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="416" y1="300" x2="470" y2="300" stroke="#1E1B3A" stroke-width="4" opacity=".6"/><path d="M510 258 L552 300 L510 342 L468 300Z" fill="#fff" stroke="#1E1B3A" stroke-width="4"/><line x1="552" y1="300" x2="610" y2="300" stroke="#1E1B3A" stroke-width="4" opacity=".6"/><circle cx="630" cy="300" r="20" fill="#3B4FE0"/><line x1="510" y1="342" x2="510" y2="390" stroke="#1E1B3A" stroke-width="4" opacity=".6"/><circle cx="510" cy="425" r="60" fill="url(#glow)"/><rect x="470" y="395" width="80" height="60" rx="14" fill="#F28A5B" filter="url(#shadow)"/><circle cx="510" cy="418" r="9" fill="#fff"/><path d="M492 446 q18 -20 36 0" fill="#fff"/>
+<path d="M640 76 C641.68 88.32 641.68 88.32 654 90 C641.68 91.68 641.68 91.68 640 104 C638.32 91.68 638.32 91.68 626 90 C638.32 88.32 638.32 88.32 640 76Z" fill="#FFFFFF" opacity="1"/><path d="M700 143 C700.84 149.16 700.84 149.16 707 150 C700.84 150.84 700.84 150.84 700 157 C699.16 150.84 699.16 150.84 693 150 C699.16 149.16 699.16 149.16 700 143Z" fill="#FFFFFF" opacity="1"/><path d="M110 111 C111.08 118.92 111.08 118.92 119 120 C111.08 121.08 111.08 121.08 110 129 C108.92 121.08 108.92 121.08 101 120 C108.92 118.92 108.92 118.92 110 111Z" fill="#FFFFFF" opacity="1"/>
+<rect width="800" height="600" filter="url(#grain)"/>
+</svg>
